@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Package2 } from "lucide-react";
 import { NavItem } from "./NavItem";
+import { UserMenu } from "./UserMenu";
 
 export const MobileSheet = ({ navItems }) => (
   <Sheet>
@@ -18,13 +19,16 @@ export const MobileSheet = ({ navItems }) => (
           className="flex items-center gap-2 text-lg font-semibold"
         >
           <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+          <span>Acme Inc</span>
         </NavItem>
         {navItems.map((item) => (
           <NavItem key={item.to} to={item.to}>
             {item.title}
           </NavItem>
         ))}
+        <div className="mt-auto">
+          <UserMenu />
+        </div>
       </nav>
     </SheetContent>
   </Sheet>
